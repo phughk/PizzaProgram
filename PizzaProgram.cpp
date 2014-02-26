@@ -18,6 +18,7 @@ PizzaTopping* generatePizzaToppingFromMenu()
 	{
 		cout << "Exiting\n";
 		return NULL;
+		delete topping;
 	}
 	else
 	{

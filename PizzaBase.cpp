@@ -25,6 +25,6 @@ void PizzaBase::setCost(float c)
 std::ostream& operator<<(std::ostream& strm, const PizzaBase b)
 {
 	char buff[40];
-	sprintf(&(buff[0]), "PizzaBase name=%s cost=%d", b.name, b.cost);
+	sprintf(&(buff[0]), "PizzaBase name=%s cost=%f", b.name, b.cost);
 	return strm << buff;
 }

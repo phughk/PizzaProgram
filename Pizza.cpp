@@ -17,7 +17,7 @@ Pizza::Pizza(void)
 
 Pizza::~Pizza()
 {
-	delete base;
+	//delete base;
 }
 
 void Pizza::setBase(PizzaBase* b)
