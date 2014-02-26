@@ -33,12 +33,12 @@ PizzaBase* generatePizzaBaseFromMenu()
 	char buff[40];
 //	float v;
 
-	cout << "Enter name: ";
+	cout << "Enter pizza base name: ";
 	cin.getline(buff, 40);
 //	cin >> buff;
 	base->setName(buff);
 
-	cout << "Enter cost: ";
+	cout << "Enter pizza base cost: ";
 	cin.getline(buff, 40);
 //	cin >> v;
 	base->setCost(atof(buff));
@@ -51,6 +51,13 @@ Pizza* generatePizzaFromMenu()
 	Pizza* p = new Pizza;
 	PizzaBase* base=0;
 	PizzaTopping* top=0;
+
+	//Setup Pizza
+	char buff[20];
+	cout << "[Builder] Enter pizza name: ";
+	cin.getline(buff, 20);
+
+	p->setName(buff);
 
 	base=generatePizzaBaseFromMenu();
 	cout << "[Builder] Generated pizza base: " << *base << "\n";
@@ -75,6 +82,8 @@ int main(int argc, char** argv)
 	cout << "End builder pizza: " << *pizza << "\n";
 	cout << "Receipt:\n";
 	pizza->getReceipt(cout);
+#ifdef _WIN32
 	system("pause");
+#endif
 }
 

@@ -5,10 +5,12 @@
 #include <vector>
 
 #define MAX_TOPPINGS 10
+#define NAME_SIZE 20
 
 class Pizza
 {
 private:
+	char name[20];
 	PizzaBase* base;
 	std::vector<PizzaTopping*> toppings;
 	friend std::ostream& operator<< (std::ostream& strm, const Pizza p);
@@ -20,6 +22,10 @@ public:
 
 	void setBase(PizzaBase*);
 	PizzaBase* getBase() const {return base;};
+
+	char* getName();
+	void setName(char* c);
+	float getCost() const;
 
 	void addTopping(PizzaTopping*);
 	void removeToppingByIndex(int);

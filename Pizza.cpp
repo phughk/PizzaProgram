@@ -25,6 +25,26 @@ void Pizza::setBase(PizzaBase* b)
 	base=b;
 }
 
+char* Pizza::getName() 
+{
+	// TODO unimplemented
+	//return &(name[0]);
+	return name;
+}
+
+void Pizza::setName(char* c)
+{
+	strcpy(name, c);
+}
+
+float Pizza::getCost() const
+{
+	float total=0.0;
+	total+=base->getCost();
+	//TODO add topping cost
+	return total;
+}
+
 void Pizza::addTopping(PizzaTopping* top)
 {
 	toppings.push_back(top);
@@ -57,13 +77,13 @@ const void Pizza::getReceipt(std::ostream& strm)
 {
 	//throw std::logic_error("The method or operation is not implemented.");
 	strm << "\nPizza: \n";
-	strm << "\tname: " << "name not declared\n";
-	strm << "\tcost: " << "cost not declared\n";
-	strm << "\tbase: " << base << "\n";
+	strm << "\tname: " << getName() << "\n";
+	strm << "\tcost: " << getCost() << "\n";
+	strm << "\tbase: " << *base << "\n";
 	strm << "\ttoppings: " << "\n";
 	for (int i=0; i<toppings.size(); i++)
 	{
-		strm << "\t\t" << toppings[i] << "\n";
+		strm << "\t\t" << *toppings[i] << "\n";
 	}
 }
 
