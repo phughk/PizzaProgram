@@ -36,7 +36,7 @@ void Pizza::removeToppingByIndex(int i)
 	else toppings.erase(toppings.begin()+i);
 }
 
-const int Pizza::getToppingCount()
+int Pizza::getToppingCount() const
 {
 	return toppings.size();
 }
@@ -70,7 +70,7 @@ const void Pizza::getReceipt(std::ostream& strm)
 std::ostream& operator<<(std::ostream& strm, const Pizza p)
 {
 	char buff[40];
-	char* n = p.getBase()->getName();
+	const char* n = p.getBase()->getName();
 	int c = p.getToppingCount();
 	sprintf(&(buff[0]), "Pizza (%s, %d toppings)", n, c);
 	strm << buff;

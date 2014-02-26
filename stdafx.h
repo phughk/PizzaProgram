@@ -7,8 +7,12 @@
 
 #include "targetver.h"
 
-#include <stdio.h>
+#ifdef _WIN32
 #include <tchar.h>
+#endif
+
+#include <stdio.h>
+#include <cstring>
 
 #include <cstdlib>
 #include <iostream>

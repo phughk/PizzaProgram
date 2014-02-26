@@ -19,11 +19,11 @@ public:
 	~Pizza(void);
 
 	void setBase(PizzaBase*);
-	const PizzaBase* getBase() {return base;};
+	PizzaBase* getBase() const {return base;};
 
 	void addTopping(PizzaTopping*);
 	void removeToppingByIndex(int);
-	const int getToppingCount();
+	int getToppingCount() const;
 	const PizzaTopping* getToppingByIndex(int);
 	const void getReceipt(std::ostream& strm);
 };
