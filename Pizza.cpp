@@ -41,6 +41,12 @@ float Pizza::getCost() const
 {
 	float total=0.0;
 	total+=base->getCost();
+
+	for (unsigned int i=0; i<toppings.size(); i++)
+	{
+		total+=toppings[i]->getCost();
+	}	
+
 	//TODO add topping cost
 	return total;
 }

@@ -9,12 +9,12 @@ using namespace std;
 PizzaTopping* generatePizzaToppingFromMenu()
 {
 	PizzaTopping* topping = new PizzaTopping;
-	char name[20];
+	char buff[20];
 	cout << "Enter topping name: ";
 	//cin >> name; Won't read empty lines
-	cin.getline(name, 20);
+	cin.getline(buff, 20);
 
-	if (strcmp(name, "")==0)
+	if (strcmp(buff, "")==0)
 	{
 		cout << "Exiting\n";
 		return NULL;
@@ -22,8 +22,11 @@ PizzaTopping* generatePizzaToppingFromMenu()
 	}
 	else
 	{
-		cout << "Adding new topping: " << name << "\n";
-		topping->setName(name);
+		topping->setName(buff);
+		cout << "Enter topping price: ";
+		cin.getline(buff, 20);
+		topping->setCost(atoi(buff));
+		cout << "Adding new topping: " << topping->getName() << "\n";
 		return topping;
 	}
 }
