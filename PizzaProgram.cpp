@@ -23,6 +23,7 @@ PizzaTopping* generatePizzaToppingFromMenu()
 	else
 	{
 		cout << "Adding new topping: " << name << "\n";
+		topping->setName(name);
 		return topping;
 	}
 }
