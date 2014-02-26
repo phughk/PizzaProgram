@@ -76,11 +76,7 @@ Pizza* generatePizzaFromMenu()
 	return p;
 }
 
-#ifdef _WIN32
-int _tmain(int argc, _TCHAR* argv[])
-#elif __unix__
-int main(int argc, char** argv)
-#endif
+int testMain()
 {
 	Pizza* pizza=generatePizzaFromMenu();
 	cout << "End builder pizza: " << *pizza << "\n";
@@ -89,5 +85,81 @@ int main(int argc, char** argv)
 #ifdef _WIN32
 	system("pause");
 #endif
+	return 0;
 }
+
+void mainProgram()
+{
+	vector<Pizza*> pizzas;
+	vector<PizzaTopping*> topps;
+	vector<PizzaBase*> bases;
+	char buff[30];
+	while (1)
+	{
+		cout << "\n" << "1. Make pizza base\n";
+		cout << "2. Make pizza topping\n";
+		cout << "3. Make pizza\n";
+		cout << "4. Make order\n";
+		cout << "5. List bases\n";
+		cout << "6. List toppings\n";
+		cout << "Enter choice: ";
+		cin.getline(buff, 30);
+		cout << "\n";
+		if (strcmp(buff, "")==0)
+		{
+			cout << "Exit? ";
+			cin.getline(buff, 30);
+			if (strcmp(buff, "")!=0) break;
+		}
+		else if (strcmp(buff, "1")==0)
+		{
+			PizzaBase* base = generatePizzaBaseFromMenu();
+			bases.push_back(base);
+		}
+		else if (strcmp(buff, "2")==0)
+		{
+			PizzaTopping* topping = generatePizzaToppingFromMenu();
+			topps.push_back(topping);
+		}
+		else if (strcmp(buff, "3")==0)
+		{
+			cout << "Unimplemented\n";
+		}
+		else if (strcmp(buff, "4")==0)
+		{
+			cout << "Unimplemented\n";
+		}
+		else if (strcmp(buff, "5")==0)
+		{
+			// List bases
+			for (unsigned int i=0; i<bases.size(); i++)
+			{
+				cout << *bases[i] << "\n";
+			}
+		}
+		else if (strcmp(buff, "6")==0)
+		{
+			for (unsigned int i=0; i<topps.size(); i++)
+			{
+				cout << *topps[i] << "\n";
+			}
+		}
+		else
+		{
+			cout << "Invalid option\n";
+		}
+	}
+}
+
+#ifdef _WIN32
+int _tmain(int argc, _TCHAR* argv[])
+#elif __unix__
+int main(int argc, char** argv)
+#endif
+{
+	//return testMain();
+	mainProgram();
+	return 0;
+}
+
 
