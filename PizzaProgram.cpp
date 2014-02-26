@@ -64,8 +64,11 @@ Pizza* generatePizzaFromMenu()
 	return p;
 }
 
-
+#ifdef _WIN32
 int _tmain(int argc, _TCHAR* argv[])
+#elif __unix__
+int main(int argc, char** argv)
+#endif
 {
 	Pizza* pizza=generatePizzaFromMenu();
 	cout << "End builder pizza: " << *pizza << "\n";
