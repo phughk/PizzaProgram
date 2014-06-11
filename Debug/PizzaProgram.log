@@ -1,0 +1,26 @@
+﻿Build started 2/26/2014 3:17:28 AM.
+     1>Project "C:\Users\Hugh\documents\visual studio 2012\Projects\PizzaProgram\PizzaProgram\PizzaProgram.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\PizzaProgram.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Pizza.cpp PizzaBase.cpp PizzaProgram.cpp
+         Pizza.cpp
+     1>c:\users\hugh\documents\visual studio 2012\projects\pizzaprogram\pizzaprogram\pizza.cpp(64): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\hugh\documents\visual studio 2012\projects\pizzaprogram\pizzaprogram\pizza.cpp(73): error C2662: 'Pizza::getBase' : cannot convert 'this' pointer from 'const Pizza' to 'Pizza &'
+                 Conversion loses qualifiers
+     1>c:\users\hugh\documents\visual studio 2012\projects\pizzaprogram\pizzaprogram\pizza.cpp(73): error C2227: left of '->getName' must point to class/struct/union/generic type
+     1>c:\users\hugh\documents\visual studio 2012\projects\pizzaprogram\pizzaprogram\pizza.cpp(74): error C2662: 'Pizza::getToppingCount' : cannot convert 'this' pointer from 'const Pizza' to 'Pizza &'
+                 Conversion loses qualifiers
+         Generating Code...
+         Compiling...
+         PizzaBase.cpp
+     1>c:\users\hugh\documents\visual studio 2012\projects\pizzaprogram\pizzaprogram\pizzabase.cpp(16): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\hugh\documents\visual studio 2012\projects\pizzaprogram\pizzaprogram\pizzabase.cpp(28): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         PizzaProgram.cpp
+     1>Done Building Project "C:\Users\Hugh\documents\visual studio 2012\Projects\PizzaProgram\PizzaProgram\PizzaProgram.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.96

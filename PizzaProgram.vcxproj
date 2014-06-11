@@ -74,6 +74,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="Program Requirements.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
