@@ -27,8 +27,6 @@ void Pizza::setBase(PizzaBase* b)
 
 char* Pizza::getName() 
 {
-	// TODO unimplemented
-	//return &(name[0]);
 	return name;
 }
 
@@ -47,7 +45,6 @@ float Pizza::getCost() const
 		total+=toppings[i]->getCost();
 	}	
 
-	//TODO add topping cost
 	return total;
 }
 

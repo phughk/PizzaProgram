@@ -81,6 +81,7 @@
     <ClInclude Include="Pizza.h" />
     <ClInclude Include="PizzaBase.h" />
     <ClInclude Include="PizzaTopping.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

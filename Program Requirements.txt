@@ -42,6 +42,8 @@ Each of the ingredients should have a cost associated with it. You should be abl
 which should have one and only one base, but many toppings. The finished pizza should calculate it’s cost.
 You should write a simple class called PizzaBuild which contains a main method which demonstrates this working.
 
+[N.B. Not using PizzaBuild class, using PizzaProgram for entry point]
+
 										###############################
 										### Create a User Interface ###
 										###############################

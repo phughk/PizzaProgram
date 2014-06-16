@@ -25,7 +25,7 @@ PizzaTopping* generatePizzaToppingFromMenu()
 		topping->setName(buff);
 		cout << "Enter topping price: ";
 		cin.getline(buff, 20);
-		topping->setCost(atoi(buff));
+		topping->setCost(atof(buff));
 		cout << "Adding new topping: " << topping->getName() << "\n";
 		return topping;
 	}
@@ -123,10 +123,15 @@ void mainProgram()
 		}
 		else if (strcmp(buff, "3")==0)
 		{
+			Pizza* p = generatePizzaFromMenu();
+			// Add pizza to list
+
 			cout << "Unimplemented\n";
 		}
 		else if (strcmp(buff, "4")==0)
 		{
+			// List or custom?
+			// Print pizza
 			cout << "Unimplemented\n";
 		}
 		else if (strcmp(buff, "5")==0)
