@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["Przemyslaw Hugh Kaznowski <hugh@kaznowski.com>"]
 
 [dependencies]
+text_io = "0.1.5"
