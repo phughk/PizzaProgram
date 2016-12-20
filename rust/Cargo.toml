@@ -1,0 +1,6 @@
+[package]
+name = "pizza_program_rust"
+version = "0.1.0"
+authors = ["Przemyslaw Hugh Kaznowski <hugh@kaznowski.com>"]
+
+[dependencies]
