@@ -1,6 +1,8 @@
 # Pizza Program
 Newcastle University UK Computer Science coursework used to teach basics of OOP (in Java)
+
 This github project contains the solution in C++ and Rust
+
 (taken from Neil Spiers' CSC1021 module on programming at Newcastle University (UK) ).
 
 
@@ -33,7 +35,7 @@ There are a number of features that you should attempt to achieve; please comple
     
 The initial version of your system should allow enable you to create objects for a pizza, one base and several toppings.
 Each of the ingredients should have a cost associated with it. You should be able to combine these to create a pizza
-which should have one and only one base, but many toppings. The finished pizza should calculate it’s cost.
+which should have one and only one base, but many toppings. The finished pizza should calculate itâ€™s cost.
 You should write a simple class called PizzaBuild which contains a main method which demonstrates this working.
 
 [N.B. Not using PizzaBuild class, using PizzaProgram for entry point]
@@ -53,7 +55,7 @@ beyond PizzaChoice should you find this useful.
     ###################
     
 Sometimes, there can be too many choices in life. Write a new class PizzaMenu, with a main method, which allows 
-the user to choose from a menu of predefined pizza’s. For instance, a Margherita pizza consists of tomato, mozzarella 
+the user to choose from a menu of predefined pizzaâ€™s. For instance, a Margherita pizza consists of tomato, mozzarella 
 and basil, on a thin base. You should provide the user with a choice of at least three pizzas.
 As before, you should print a short report showing all the ingredients. You may create additional classes beyond PizzaMenu
 should you find this useful.
