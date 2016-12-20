@@ -12,5 +12,8 @@
 *.la
 *.a
 
+# VS
+Debug/**
+
 # Other OS specific
 *.swp
