@@ -8,6 +8,10 @@ struct Topping<'a> {
     price: f32
 }
 
+struct Pizza<'a> {
+    toppings: Vec<Box<Topping<'a>>>
+}
+
 fn main() {
     let stdin = io::stdin();
     let name  = get_name(stdin);
