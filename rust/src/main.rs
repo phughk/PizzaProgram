@@ -9,7 +9,14 @@ struct Topping<'a> {
 }
 
 struct Pizza<'a> {
-    toppings: Vec<Box<Topping<'a>>>
+//    toppings: Vec<Box<Topping<'a>>>
+    toppings: Vec<Topping<'a>>
+}
+
+impl <'a> Pizza<'a> {
+    pub fn to_string(&self) -> String {
+        return format!("Pizza with {} has price {}", self.toppings[0].name, self.toppings[0].price);
+    }
 }
 
 fn main() {
@@ -17,6 +24,11 @@ fn main() {
     let name  = get_name(stdin);
     println!("Hello {}", name);
     str_topping(get_topping());
+    println!("Pizza is {}", get_pizza().to_string());
+}
+
+fn get_pizza<'a>() -> Pizza<'a> {
+    return Pizza{toppings:vec!(get_topping())}
 }
 
 fn get_topping<'a>() -> Topping<'a> {
