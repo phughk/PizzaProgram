@@ -9,30 +9,34 @@ struct Topping<'a> {
 }
 
 struct Pizza<'a> {
-//    toppings: Vec<Box<Topping<'a>>>
     toppings: Vec<Topping<'a>>
 }
 
-impl <'a> Pizza<'a> {
+impl<'a> Pizza<'a> {
     pub fn to_string(&self) -> String {
-        return format!("Pizza with {} has price {}", self.toppings[0].name, self.toppings[0].price);
+        let total: f32 = self.toppings
+            .iter()
+            .map(|topping| topping.price)
+            .fold(0f32, |left, right| { left + right });
+        let topping_list = self.toppings.iter().map(|topping| topping.name).collect::<Vec<String>>().join(", ");
+        return format!("Pizza with {} has price {}", topping_list, total);
     }
 }
 
 fn main() {
     let stdin = io::stdin();
-    let name  = get_name(stdin);
+    let name = get_name(stdin);
     println!("Hello {}", name);
     str_topping(get_topping());
     println!("Pizza is {}", get_pizza().to_string());
 }
 
 fn get_pizza<'a>() -> Pizza<'a> {
-    return Pizza{toppings:vec!(get_topping())}
+    return Pizza { toppings: vec!(get_topping(), get_topping()) }
 }
 
 fn get_topping<'a>() -> Topping<'a> {
-    return Topping {name: "Salami", price: 0.7}
+    return Topping { name: "Salami", price: 0.7 }
 }
 
 fn str_topping(topping: Topping) {
