@@ -5,7 +5,7 @@ use std::str;
 
 struct Topping<'a> {
     name: &'a str,
-    vegeterian: bool,
+    vegetarian: bool,
     price: f32
 }
 
@@ -18,7 +18,7 @@ struct Base<'a> {
     name: &'a str,
     height: f32,
     thickness: f32,
-    vegeterian: bool
+    vegetarian: bool
 }
 
 impl<'a> Pizza<'a> {
@@ -27,8 +27,20 @@ impl<'a> Pizza<'a> {
             .iter()
             .map(|topping| topping.price)
             .fold(0f32, |left, right| { left + right });
-        let topping_list = self.toppings.iter().map(|topping| topping.name).collect::<Vec<&str>>().join(", ");
-        return format!("Pizza with {} has price {}", topping_list, total);
+        let topping_list = self.toppings
+            .iter()
+            .map(|topping| topping.name)
+            .collect::<Vec<&str>>()
+            .join(", ");
+        return format!("Pizza with {} has price {} and is {}vegetarian", topping_list, total, if self.is_vegetarian() {""} else {"not "});
+    }
+
+    pub fn is_vegetarian(&self) -> bool {
+        let veg_toppings = self.toppings
+            .iter()
+            .map(|topping| topping.vegetarian)
+            .fold(false, |left, right| {left || right});
+        return veg_toppings || self.base.vegetarian;
     }
 }
 
@@ -41,11 +53,11 @@ fn main() {
 }
 
 fn get_pizza<'a>() -> Pizza<'a> {
-    return Pizza { toppings: vec!(get_topping(), get_topping()), base: Base{vegeterian: false, name: "Test base", height: 12.5f32, thickness: 113f32}};
+    return Pizza { toppings: vec!(get_topping(), get_topping()), base: Base{ vegetarian: false, name: "Test base", height: 12.5f32, thickness: 113f32}};
 }
 
 fn get_topping<'a>() -> Topping<'a> {
-    return Topping { name: "Salami", price: 0.7, vegeterian: false}
+    return Topping { name: "Salami", price: 0.7, vegetarian: false}
 }
 
 fn str_topping(topping: Topping) {
