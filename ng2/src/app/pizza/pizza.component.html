@@ -1,8 +1,7 @@
 <p>
-  pizza works!
-	<app-pizza-base></app-pizza-base>
-	<ul>
-	<li *ngFor="let topping_name of toppings"><b>{{topping_name}}</b></li>
-	</ul>
-	<app-pizza-topping></app-pizza-topping>
+pizza works!
 </p>
+<app-pizza-base></app-pizza-base>
+<ul>
+	<app-pizza-topping *ngFor="let topping_name of toppings" [name]="topping_name"></app-pizza-topping>
+</ul>
