@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PizzaBaseComponent implements OnInit {
 
-  constructor() { }
+	name: string;
+
+  constructor() { 
+		this.name = "Example Pizza Base Name";
+	}
 
   ngOnInit() {
   }
