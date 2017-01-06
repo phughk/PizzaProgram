@@ -11,9 +11,12 @@ import { PizzaToppingComponent } from '../pizza-topping/pizza-topping.component'
 export class PizzaComponent implements OnInit {
 
 	toppings: string[];
+	base: PizzaBaseComponent;
 
   constructor() { 
 		this.toppings = ["Salami", "Pepperoni"]
+		//this.base = {name: "thin", price=4}
+		this.base = new PizzaBaseComponent();
 	}
 
   ngOnInit() {

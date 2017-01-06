@@ -1,7 +1,20 @@
-<p>
-pizza works!
-</p>
-<app-pizza-base></app-pizza-base>
+<table border="1">
+	<tr>
+		<td>Template Pizza Name</td>
+	</tr>
+	<tr>
+		<td>
+			{{base.name}}
+		</td>
+		<td>
+			{{base.price}}
+		</td>
+	</tr>
+	<tr *ngFor="let topping_name of toppings">
+		<td>
+			<app-pizza-topping [price]="1.5" [name]="topping_name"></app-pizza-topping>
+		</td>
+	</tr>
+</table>
 <ul>
-	<app-pizza-topping *ngFor="let topping_name of toppings" [name]="topping_name"></app-pizza-topping>
 </ul>
