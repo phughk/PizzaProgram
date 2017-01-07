@@ -1,31 +1,46 @@
-<div class="panel panel-success">
-	<div class="panel-heading">
-		Content
-	</div>
-	<div class="panel-body">
+<div class="container panel panel-success">
+	<div class="panel-heading row">
 		<div>{{name}}</div>
 	</div>
-</div>
-
-<div class="row">
-</div>
-
-<div class="row">
-	<div class="col-xs-6">
-		<div>{{base.name}}</div>
-	</div>
-	<div class="col-xs-6">
-		<div>{{base.price}}</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-xs-12" *ngFor="let topping of toppings">
-		<div class="col-xs-6">
-			{{topping.name}}
-		</div>
-		<div class="col-xs-6">
-			{{topping.price}}
-		</div>
+	<div class="panel-body">
+		<ul class="list-group">
+			<li class="row list-group-item list-group-item-warning">
+				<span class="col-xs-12">Pizza Base</span>
+			</li>
+			<li class="row list-group-item">
+				<span class="col-xs-12">{{base.name}}</span>
+			</li>
+			<li class="row list-group-item list-group-item-warning">
+				<span class="col-xs-12">Pizza Toppings</span>
+			</li>
+			<li class="row list-group-item" *ngFor="let topping of toppings">
+				<span class="col-xs-6">{{topping.name}}</span>
+				<span class="col-xs-6">{{topping.price}}</span>
+			</li>
+		</ul>
+		<!--<div class="list-group">
+			<a href="#" class="list-group-item list-group-item-warning">
+				<span>Pizza Base</span>
+			</a>
+			<a href="#" class="list-group-item">
+				<div class="col-xs-6">
+					<div>{{base.name}}</div>
+				</div>
+				<div class="col-xs-6">
+					<div>{{base.price}}</div>
+				</div>
+			</a>
+			<a href="#" class="list-group-item list-group-item-warning">
+				<span>Pizza Toppings</span>
+			</a>
+			<a href="#" class="list-group-item" *ngFor="let topping of toppings">
+				<span class="col-xs-6">
+					{{topping.name}}
+				</span>
+				<span class="col-xs-6">
+					{{topping.price}}
+				</span>
+			</a>
+		</div>-->
 	</div>
 </div>
