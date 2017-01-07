@@ -12,8 +12,10 @@ export class PizzaComponent implements OnInit {
 
 	toppings: PizzaTopping[];
 	base: PizzaBase;
+	name: string;
 
   constructor() { 
+		this.name = "Hardcoded name";
 		this.toppings = [
 			new PizzaTopping("Salami"),
 			new PizzaTopping("Cheese")

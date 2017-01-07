@@ -1,20 +1,31 @@
-<table border="1">
-	<tr>
-		<td>Template Pizza Name</td>
-	</tr>
-	<tr>
-		<td>
-			{{base.name}}
-		</td>
-		<td>
-			{{base.price}}
-		</td>
-	</tr>
-	<tr *ngFor="let topping_name of toppings">
-		<td>
-			<app-pizza-topping [price]="1.5" [name]="topping_name"></app-pizza-topping>
-		</td>
-	</tr>
-</table>
-<ul>
-</ul>
+<div class="panel panel-success">
+	<div class="panel-heading">
+		Content
+	</div>
+	<div class="panel-body">
+		<div>{{name}}</div>
+	</div>
+</div>
+
+<div class="row">
+</div>
+
+<div class="row">
+	<div class="col-xs-6">
+		<div>{{base.name}}</div>
+	</div>
+	<div class="col-xs-6">
+		<div>{{base.price}}</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12" *ngFor="let topping of toppings">
+		<div class="col-xs-6">
+			{{topping.name}}
+		</div>
+		<div class="col-xs-6">
+			{{topping.price}}
+		</div>
+	</div>
+</div>
