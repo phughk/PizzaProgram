@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PizzaBaseComponent } from '../pizza-base/pizza-base.component';
-import { PizzaToppingComponent } from '../pizza-topping/pizza-topping.component';
+import { PizzaBase } from '../pizza-base.model';
+import { PizzaTopping } from '../pizza-topping.model';
 
 @Component({
   selector: 'app-pizza',
@@ -10,13 +10,15 @@ import { PizzaToppingComponent } from '../pizza-topping/pizza-topping.component'
 })
 export class PizzaComponent implements OnInit {
 
-	toppings: string[];
-	base: PizzaBaseComponent;
+	toppings: PizzaTopping[];
+	base: PizzaBase;
 
   constructor() { 
-		this.toppings = ["Salami", "Pepperoni"]
-		//this.base = {name: "thin", price=4}
-		this.base = new PizzaBaseComponent();
+		this.toppings = [
+			new PizzaTopping("Salami"),
+			new PizzaTopping("Cheese")
+		]
+		this.base = new PizzaBase();
 	}
 
   ngOnInit() {
