@@ -9,6 +9,8 @@ import { PizzaComponent } from './pizza/pizza.component';
 import { PizzaMenuComponent } from './pizza-menu/pizza-menu.component';
 import { CreatePizzaComponent } from './create-pizza/create-pizza.component';
 
+import { MenuService } from './menu.service';
+
 const routes: Routes = [
 	{ path: '', redirectTo: 'menu', pathMatch: 'full' },
 	{ path: 'menu', component: PizzaMenuComponent },
@@ -29,7 +31,7 @@ const routes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
