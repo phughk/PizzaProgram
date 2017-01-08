@@ -13,6 +13,7 @@ const routes: Routes = [
 	{ path: '', redirectTo: 'menu', pathMatch: 'full' },
 	{ path: 'menu', component: PizzaMenuComponent },
 	{ path: 'pizza', component: PizzaComponent },
+	{ path: 'create', component: CreatePizzaComponent },
 ];
 
 @NgModule({
