@@ -1,6 +1,21 @@
 <p>
-create-pizza works!
+	create-pizza works!
 </p>
 <button type="button" class="btn btn-primary" (click)="menuService.click()">
 	Bop! <span class="badge">{{menuService.values.length}}</span>
 </button>
+
+<div class="container">
+	<div class="btn-group" data-toggle="buttons">
+		<label class="btn btn-default **active**">
+			<input type="radio" name="inputWalls" id="inputWalls" value="Excellent" checked> Excellent 
+		</label>
+		<label class="btn btn-default">
+			<input type="radio" name="inputWalls" id="inputWalls" value="Good"> Good 
+		</label>
+		<label class="btn btn-default">
+			<input type="radio" name="inputWalls" id="inputWalls" value="Poor" > Poor
+		</label>
+	</div>
+
+</div>
