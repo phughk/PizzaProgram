@@ -6,7 +6,7 @@ mod pizza;
 
 fn main() {
     let stdin = io::stdin();
-    let name = helpers::get_name(stdin);
+    let name = helpers::read_line(stdin, "Enter name: ");
     println!("Hello {}", name);
     println!("Pizza is {}", get_pizza());
 }
