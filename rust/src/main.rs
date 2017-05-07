@@ -1,6 +1,4 @@
 use std::io;
-use std::string::String;
-use std::io::Write; // Used for flush implicitly?
 mod helpers;
 mod pizza_base;
 mod topping;
