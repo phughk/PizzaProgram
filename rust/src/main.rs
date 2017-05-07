@@ -2,7 +2,7 @@ use std::io;
 use std::string::String;
 use std::io::Write; // Used for flush implicitly?
 mod helpers;
-mod pizza_base::Base;
+mod pizza_base;
 
 struct Topping<'a> {
     name: &'a str,
@@ -12,7 +12,7 @@ struct Topping<'a> {
 
 struct Pizza<'a> {
     toppings: Vec<Topping<'a>>,
-    base: Base<'a>
+    base: pizza_base::Base<'a>
 }
 
 impl<'a> Pizza<'a> {
@@ -47,7 +47,7 @@ fn main() {
 }
 
 fn get_pizza<'a>() -> Pizza<'a> {
-    return Pizza { toppings: vec!(get_topping(), get_topping()), base: Base{ vegetarian: false, name: "Test base", height: 12.5f32, thickness: 113f32}};
+    return Pizza { toppings: vec!(get_topping(), get_topping()), base: pizza_base::Base{ vegetarian: false, name: "Test base", height: 12.5f32, thickness: 113f32}};
 }
 
 fn get_topping<'a>() -> Topping<'a> {

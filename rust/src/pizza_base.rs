@@ -1,8 +1,8 @@
 use std::str;
 
 pub struct Base<'a> {
-    name: &'a str,
-    height: f32,
-    thickness: f32,
-    vegetarian: bool
+    pub name: &'a str,
+    pub height: f32,
+    pub thickness: f32,
+    pub vegetarian: bool
 }
