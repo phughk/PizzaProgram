@@ -1,7 +1,8 @@
 use std::io;
 use std::string::String;
 use std::io::Write; // Used for flush implicitly?
-use std::str;
+mod helpers;
+mod pizza_base::Base;
 
 struct Topping<'a> {
     name: &'a str,
@@ -12,13 +13,6 @@ struct Topping<'a> {
 struct Pizza<'a> {
     toppings: Vec<Topping<'a>>,
     base: Base<'a>
-}
-
-struct Base<'a> {
-    name: &'a str,
-    height: f32,
-    thickness: f32,
-    vegetarian: bool
 }
 
 impl<'a> Pizza<'a> {
@@ -46,7 +40,7 @@ impl<'a> Pizza<'a> {
 
 fn main() {
     let stdin = io::stdin();
-    let name = get_name(stdin);
+    let name = helpers::get_name(stdin);
     println!("Hello {}", name);
     str_topping(get_topping());
     println!("Pizza is {}", get_pizza().to_string());
@@ -62,12 +56,4 @@ fn get_topping<'a>() -> Topping<'a> {
 
 fn str_topping(topping: Topping) {
     println!("{} - {}", topping.name, topping.price)
-}
-
-fn get_name(stdin: io::Stdin) -> String {
-    print!("Enter name: ");
-    io::stdout().flush();
-    let mut name = String::new();
-    stdin.read_line(&mut name);
-    return name;
 }
