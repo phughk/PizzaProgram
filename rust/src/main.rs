@@ -3,15 +3,10 @@ use std::string::String;
 use std::io::Write; // Used for flush implicitly?
 mod helpers;
 mod pizza_base;
-
-struct Topping<'a> {
-    name: &'a str,
-    vegetarian: bool,
-    price: f32
-}
+mod topping;
 
 struct Pizza<'a> {
-    toppings: Vec<Topping<'a>>,
+    toppings: Vec<topping::Topping<'a>>,
     base: pizza_base::Base<'a>
 }
 
@@ -50,10 +45,10 @@ fn get_pizza<'a>() -> Pizza<'a> {
     return Pizza { toppings: vec!(get_topping(), get_topping()), base: pizza_base::Base{ vegetarian: false, name: "Test base", height: 12.5f32, thickness: 113f32}};
 }
 
-fn get_topping<'a>() -> Topping<'a> {
-    return Topping { name: "Salami", price: 0.7, vegetarian: false}
+fn get_topping<'a>() -> topping::Topping<'a> {
+    return topping::Topping { name: "Salami", price: 0.7, vegetarian: false}
 }
 
-fn str_topping(topping: Topping) {
+fn str_topping(topping: topping::Topping) {
     println!("{} - {}", topping.name, topping.price)
 }
