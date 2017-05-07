@@ -4,13 +4,9 @@ use std::io::Write; // Used for flush implicitly?
 mod helpers;
 mod pizza_base;
 mod topping;
+mod pizza;
 
-struct Pizza<'a> {
-    toppings: Vec<topping::Topping<'a>>,
-    base: pizza_base::Base<'a>
-}
-
-impl<'a> Pizza<'a> {
+impl<'a> pizza::Pizza<'a> {
     pub fn to_string(&self) -> String {
         let total: f32 = self.toppings
             .iter()
@@ -41,8 +37,8 @@ fn main() {
     println!("Pizza is {}", get_pizza().to_string());
 }
 
-fn get_pizza<'a>() -> Pizza<'a> {
-    return Pizza { toppings: vec!(get_topping(), get_topping()), base: pizza_base::Base{ vegetarian: false, name: "Test base", height: 12.5f32, thickness: 113f32}};
+fn get_pizza<'a>() -> pizza::Pizza<'a> {
+    return pizza::Pizza { toppings: vec!(get_topping(), get_topping()), base: pizza_base::Base{ vegetarian: false, name: "Test base", height: 12.5f32, thickness: 113f32}};
 }
 
 fn get_topping<'a>() -> topping::Topping<'a> {
