@@ -8,7 +8,6 @@ fn main() {
     let stdin = io::stdin();
     let name = helpers::get_name(stdin);
     println!("Hello {}", name);
-    str_topping(get_topping());
     println!("Pizza is {}", get_pizza());
 }
 
@@ -30,8 +29,4 @@ fn get_topping<'a>() -> topping::Topping<'a> {
                price: 0.7,
                vegetarian: false,
            };
-}
-
-fn str_topping(topping: topping::Topping) {
-    println!("{} - {}", topping.name, topping.price)
 }
