@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { PizzaComponent } from './pizza/pizza.component';
 
 @Injectable()
 export class MenuService {
 
 	values: string[];
+	pizzas: PizzaComponent[]
 
   constructor() {
 		this.values = []
