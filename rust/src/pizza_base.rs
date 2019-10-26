@@ -1,8 +1,6 @@
-use std::str;
-
-pub struct Base<'a> {
-    pub name: &'a str,
-    pub height: f32,
+pub struct Base {
+    pub name: String,
+    pub diameter: f32,
     pub thickness: f32,
-    pub vegetarian: bool,
+    pub vegeterian: bool,
 }

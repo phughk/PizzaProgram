@@ -2,12 +2,12 @@ use topping::Topping;
 use pizza_base::Base;
 use std::fmt;
 
-pub struct Pizza<'a> {
-    pub toppings: Vec<Topping<'a>>,
-    pub base: Base<'a>,
+pub struct Pizza {
+    pub toppings: Vec<Topping>,
+    pub base: Base,
 }
 
-impl<'a> fmt::Display for Pizza<'a> {
+impl fmt::Display for Pizza {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let total: f32 = self.toppings
             .iter()
@@ -15,9 +15,10 @@ impl<'a> fmt::Display for Pizza<'a> {
             .fold(0f32, |left, right| left + right);
         let topping_list = self.toppings
             .iter()
-            .map(|topping| topping.name)
-            .collect::<Vec<&str>>()
+            .map(|topping| topping.name.clone())
+            .collect::<Vec<String>>()
             .join(", ");
+
         write!(f,
                "Pizza with {} has price {} and is {}vegetarian",
                topping_list,
@@ -26,12 +27,12 @@ impl<'a> fmt::Display for Pizza<'a> {
     }
 }
 
-impl<'a> Pizza<'a> {
+impl Pizza {
     pub fn is_vegetarian(&self) -> bool {
         let veg_toppings = self.toppings
             .iter()
-            .map(|topping| topping.vegetarian)
+            .map(|topping| topping.vegeterian)
             .fold(false, |left, right| left || right);
-        return veg_toppings || self.base.vegetarian;
+        return veg_toppings || self.base.vegeterian;
     }
 }
