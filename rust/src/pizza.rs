@@ -2,12 +2,12 @@ use topping::Topping;
 use pizza_base::Base;
 use std::fmt;
 
-pub struct Pizza <'a> {
-    pub toppings: Vec<&'a Topping>,
-    pub base: &'a Base,
+pub struct Pizza {
+    pub toppings: Vec<Box<Topping>>,
+    pub base: Box< Base>,
 }
 
-impl <'a> fmt::Display for Pizza <'a> {
+impl fmt::Display for Pizza {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let total: f32 = self.toppings
             .iter()
@@ -27,7 +27,7 @@ impl <'a> fmt::Display for Pizza <'a> {
     }
 }
 
-impl <'a> Pizza <'a> {
+impl Pizza {
     pub fn is_vegetarian(&self) -> bool {
         let veg_toppings = self.toppings
             .iter()
